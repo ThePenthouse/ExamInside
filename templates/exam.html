@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p><strong>{{ message }}</strong></p>
+            {% endfor %}
+        {% endif %}
+{% endwith %}
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+          <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="clr"></div>
+        <div class="article">
+          <h2><span> Subject : </span> JAVA &emsp;
+          <span> Total Questions : </span> 10  &emsp;<span> Time : </span> 30 min</h2>
+          <h3><span> Course : </span> MCA &emsp;<span> Semester : </span> 5&emsp;<span> Paper Code : </span> MCA-201</h3>  
+        </div>
+        <div class="clr"></div>
+        <div class="article">
+        {% for item in data %}
+          <h2><span> Q{{ item[0] }}.</span> {{ item[1] }}</h2>
+          <h3><span>a) {{ item[2] }}</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span>b) {{ item[3] }}</span></h3> 
+          <h3><span>c) {{ item[4] }}</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span>d) {{ item[5] }}</span></h3>
+          <div class="clr"></div>
+          <h3><span>Ans.</span>&nbsp;&nbsp;<span><input type="text" name="answer" placeholder="Answer"></span></h3>  
+          <div class="clr"></div>
+        {% endfor %}
+        </div>
+         <button class="btn" type="submit"><i class="fas fa-user-edit"></i> Submit</button>
+        <div class="clr"></div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h3><img src="{{ session['Profile_pic'] }}" width="140" height="140" alt="" /></a></h3>
+          <h2 class="star">{{ session['Username'] }}<span></span> </h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            <li>Roll No: {{ session['User_id'] }} &nbsp; Course:  &nbsp; Semester: 
+            <li>Contact No : {{ session['Contact'] }}</li>
+            <li>Email: {{ session['Email'] }}</li>
+            <li>Dept. of CSE, University of Kalyani</li>
+          </ul>
+      
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span> Subject : </span> JAVA</h2>
+          <div class="clr"></div>
+          <ul class="exm_menu">
+          {% for item in data %}
+            <li><a href="">Q{{ item[0] }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

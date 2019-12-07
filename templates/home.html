@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+            {% if title %}
+                <title>{{ title }} to ExamInside</title>
+            {% else %}
+                <title>ExamInside</title>
+            {% endif %}
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homestyle.css') }}">
+</head>
+<body>
+    <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+    </div>
+    <div>
+            <nav class="menu">
+                    <ul>
+                            <li><a href="{{ url_for('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                            <li><a href="{{ url_for('about') }}"><i class="fa fa-address-book" aria-hidden="true"></i> About</a></li>
+                            <li><a href="{{ url_for('gallery') }}"><i class="fa fa-camera" aria-hidden="true"></i> Gallery</a></li>
+                            <li><a href="{{ url_for('feedback') }}"><i class="fa fa-comment" aria-hidden="true"></i> Feedback</a></li>
+                            <li><a href="{{ url_for('contact') }}"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
+                    </ul>
+                   <form class="search-form">
+                       <input type="text" placeholder="Search...">
+                       <button class="btn"><img src="{{ url_for('static', filename='images/srch.jpg') }}" width="15px" height="15px"/></button>
+                   </form>   
+            </nav>
+        </div>
+    <div class="logo"></div>
+    <div class="header">
+        <form> 
+            <h1>WELCOME TO EXAM<span>INSIDE</span><small>Choose your panel here...</small></h1>
+            <div class="container">
+            <div class="box">
+                    <div class="icon">
+                       <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="content">
+                       <h3> <a href="{{ url_for('tclogin') }}">Teacher</a></h3>
+                    </div>
+             </div>
+            
+            <div class="box">
+                <div class="icon">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                </div>
+               <div class="content"> 
+                    <h3> <a href="">Student</a> </h3>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>   
+</body>
+</html>
