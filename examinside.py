@@ -110,10 +110,6 @@ def tcsignup():
 def tchome():
     if request.method == "POST":
         details = request.form
-        time = details['time']
-        course = details['course']
-        semester = details['semester']
-        subject = details['subject']
         ques = details['ques']
         option1 = details['option1']
         option2 = details['option2']
@@ -121,7 +117,7 @@ def tchome():
         option4 = details['option4']
         ans = details['ans']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO question(time, course, semester, subject, ques, option1, option2, option3, option4, ans) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (time, course, semester, subject, ques, option1, option2, option3, option4, ans))
+        cur.execute("INSERT INTO question(ques, option1, option2, option3, option4, ans) VALUES (%s, %s, %s, %s, %s, %s)", (ques, option1, option2, option3, option4, ans))
         mysql.connection.commit()
         cur.close()
         return redirect(url_for('exam'))

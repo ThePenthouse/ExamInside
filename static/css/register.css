@@ -51,7 +51,7 @@ body{
 .register{
 	background-color: rgb(255, 255, 255);
 	color: #000;
-	top: 35%;
+	top: 40%;
 	left:78%;
 	position: absolute;
 	transform: translate(-50%,-50%);
@@ -73,7 +73,6 @@ h1{
 } 
 	
 h2{
-	margin-left:12%;
 	font-size:12px;
 }
 	
@@ -86,20 +85,17 @@ h5{
 
 h6{
 	font-size:11px;
+	padding-left: 10%;
 }
 
 p{
-	padding-left: 27px;
 	font-size: 14px;
 	text-align: center;
 	color: rgb(56, 172, 250);	
 }
 
 .register input{
-	width: 72%;
-	/* margin-bottom: 15px;
-	margin-left: 15%;
-	margin-right: 20px; */
+	width: 78%;
 	border: 1.5px solid rgb(199, 199, 199);
 	font-size: 15px;
 	color: rgb(69, 70, 70);
