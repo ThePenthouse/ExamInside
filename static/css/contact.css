@@ -30,27 +30,6 @@
     float: left; 
     margin-left:37%;
 }
-
-.btn {
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid transparent;
-    padding: 10px 20px;
-    font-size: 14px;
-    line-height: 1.42857;
-    border-radius: 4px;
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-  }
-
-  .btn:hover{
-    color: #fff;
-    background-color: #286090;
-    border-color: #204d74;
-  }
-  
   
  .form-group {
     width: 50%;
