@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+          <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+        <ul>
+          <li>{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <a><strong>{{ message }}</strong></a>
+                    {% endfor %}
+                {% endif %}
+              {% endwith %}</li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="clr"></div>
+        <div class="article">
+          <h2><span> Subject : </span> JAVA &emsp;
+          <span> Total Questions : </span> 30  &emsp;<span> Time : </span> 40 min</h2> 
+          <h3><span> Course : </span> MCA &emsp;<span> Semester : </span> 5&emsp;<span> Paper Code : </span> MCA-201</h3>  
+        </div>
+        <div class="clr"></div>
+        <div class="article">
+            <form method="POST" action="">
+            <h2><textarea rows="6" cols="50" name="ques" placeholder="Question"></textarea></h2>
+            <h3><span>a) <input type="text" name="option1" placeholder="Option 1"></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span>b) <input type="text" name="option2" placeholder="Option 2"></span></h3> 
+            <h3><span>c) <input type="text" name="option3" placeholder="Option 3"></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span>d) <input type="text" name="option4" placeholder="Option 4"></span></h3>
+            <div class="clr"></div>
+            <h3><span>Ans.</span>&nbsp;&nbsp;<span><input type="text" name="ans" placeholder="Answer"></span></h3>
+            <div class="clr"></div>
+              <p class="spec"> <a href="{{ url_for('teacherques') }}" class="com"><span>1</span> Next </a></p>
+            <button class="btn" type="submit"><i class="fas fa-user-edit"></i> Submit</button>
+            <div class="clr"></div>
+            </form>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h3><img src="{{ session['Profile_pic'] }}" width="140" height="140" alt="" /></a></h3>
+          <h2 class="star">{{ session['Username'] }}<span></span> </h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            <li>Teacher Id: {{ session['User_id'] }} &nbsp; 
+            <li>Contact : {{ session['Contact'] }}</li>
+            <li>Email : {{ session['Email'] }}</li>
+            <li>Dept. of CSE, University of Kalyani</li>
+          </ul>
+      
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span> Subject : </span> JAVA</h2>
+          <div class="clr"></div>
+          <ul class="exm_menu">
+            <li><a href="">Q1</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q2</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q3</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q4</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q6</a><br /></li>
+            <li><a href="">Q7</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q8</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q9</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q10</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q11</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q12</a><br /></li>
+            <li><a href="">Q13</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q14</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q15</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q16</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q17</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q18</a><br /></li>
+            <li><a href="">Q19</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q20</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q21</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q22</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q23</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q24</a><br /></li>
+            <li><a href="">Q25</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q26</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q27</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q28</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q29</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Q30</a><br /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
