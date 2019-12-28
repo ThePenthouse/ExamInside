@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }} </title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+           <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Welcome to</span> Teacher Panel</h2>
+          <div class="clr"></div>
+          <p><span class="date">Join with us</span> by <a href="{{ url_for('stlogin') }}">Login</a> here &nbsp;|&nbsp; Or Create your account by <a href="{{ url_for('tcsignup') }}"> Sign up </a>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/1.jpg') }}" class="slides" width="100%" height="200" alt=""/> 
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/2.jpg') }}" class="slides" width="100%" height="200" alt=""/> 
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/3.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/4.jpg') }}" class="slides" width="100%" height="200" alt=""/> 
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/5.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/6.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/7.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/8.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/9.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+  <div class="slider">
+  <div class="slider-grids">
+					<a>
+						<img src="{{ url_for('static', filename='images/10.jpg') }}" class="slides" width="100%" height="200" alt=""/>
+          </a>
+  </div>
+  </div>
+	<script>
+	var myIndex=0;
+	myslider();
+	
+	function myslider()
+	{
+		var i;
+		var x=document.getElementsByClassName("slides");
+		for(i = 0; i < x.length; i++)
+		{
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if(myIndex > x.length)
+		{
+			myIndex=1;
+		}
+		x[myIndex-1].style.display = "block";
+		setTimeout(myslider, 3000);
+	}
+	</script>
+         
+        </div> 
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+           <div class="login">
+              <form action="/stlogin" method="POST">
+                <h2>Log In</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                      {% for category, message in messages %}
+                          {% if category == 'success' %}
+                              <h5 class="success" text-center><strong>{{ message }}</strong></h5>
+                          {% else %}
+                              <h5 class="error" text-center><strong>{{ message }}</strong></h5>
+                          {% endif %}
+                      {% endfor %}
+                  {% endif%}
+                {% endwith %}
+                
+                <p><img id="person" src="{{ url_for('static', filename='images/person1.png') }}" width="10%" height="10%">&nbsp; USERNAME</p><input type="email" name="email" placeholder="Enter Your Email" required>
+                <p><img id="lock" src="{{ url_for('static', filename='images/lock.png') }}" width="10%" height="10%">&nbsp; PASSWORD </p><input type="password" name="password"  placeholder="*******" required>
+                <h2><input type="submit" value="SIGN IN"></h2>
+                <a href="/stsignup">Create a new account</a>
+    		      </form>
+            </div>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href=""><img src="{{ url_for('static', filename='images/pix1.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href=""><img src="{{ url_for('static', filename='images/pix2.jpg') }}" width="58" height="58" alt="" /></a>
+        <a href=""><img src="{{ url_for('static', filename='images/pix3.jpg') }}" width="58" height="58" alt="" /></a>
+        <a href=""><img src="{{ url_for('static', filename='images/pix4.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href=""><img src="{{ url_for('static', filename='images/pix5.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href=""><img src="{{ url_for('static', filename='images/pix6.jpg') }}" width="58" height="58" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2><span>Dept. Of CSE</span></h2>
+        <p>MCA (Master Of Computer Application)<br />
+        MSC in CSE (Master Of Science in Computer Science & Engineering)<br />
+        MTECH in CSE (Master of Technology in Computer Science & Engineering)</p>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span></h2>
+        <p>ExamInside.com</p>
+        <p>+91 7908611068</p>
+        <p>Address: Dept. of CSE, UNIVERSITY OF KALYANI</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}"/>
+</head>
+<body>
+    <div class="register">
+              <form method="POST" action="">
+                <h1>Sign Up</h1>
+                 {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p><strong>{{ message }}</strong></p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <h5>Create your account. It only takes a minute.</h5>
+                <h6> NAME&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Username" placeholder="Name"></h6>
+                <h6> EMAIL&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Email" placeholder="Email"></h6>
+                <h6> PASSWORD&nbsp;:&nbsp;<input type="password" name="Password" placeholder="******"></h6>
+                <h6> CONTACT&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Contact" placeholder="Contact No"></h6>
+                <h6> PROFILE PIC&nbsp;:&nbsp;<input type="file" name="Profile_pic" accept="image/*"></h6>
+                <h2 class="btn"><input type="submit" value="Register Now"></h2>
+                <p>Already have an account?<a href="/stlogin">Sign In</a></p>
+    		</form>
+    </div> 
+</body>
+</html>

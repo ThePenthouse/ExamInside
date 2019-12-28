@@ -159,6 +159,75 @@ def exam():
     return render_template('exam.html', data= data, title='Exam')
 
 
+@app.route("/stlogin",)
+def stlogin():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM examinside.user")
+    data = cur.fetchall()
+    return render_template('stlogin.html', data= data, title='Welcome')
+
+
+@app.route('/stlogin', methods = ['GET', 'POST'])
+def studentlogin():
+    if request.method == 'POST':
+        cur = mysql.connection.cursor()
+        email = request.form['email']
+        password = request.form['password']
+        cur.execute("SELECT * from user where Email = %s and Password = %s", (email, password))
+        current_user = cur.fetchone()
+        if not current_user:
+            flash('Invalid email or password!', 'error')
+        else:
+            session['User_id'] = current_user[0]
+            session['Username'] =  current_user[1]
+            session['Email'] = current_user[2]
+            session['Contact'] =  current_user[4]
+            session['Profile_pic'] =  current_user[5]
+            flash('Logged in as %s' % session['Email'])
+            return redirect(url_for('sthome'))
+
+    return render_template('stlogin.html', title='Login')
+
+
+
+@app.route('/stsignup', methods = ['GET', 'POST'])
+def stsignup():
+    if request.method == 'POST':
+        cur = mysql.connection.cursor()
+        Email = request.form['Email']
+        Password = request.form['Password']
+        Username = request.form['Username']
+        Contact = request.form['Contact']
+        Profile_pic = request.form['Profile_pic']
+        cur.execute("SELECT * from user where Email = %s and Password = %s", (Email, Password))
+        current_user = cur.fetchone()
+        if not current_user:
+            cur.execute("INSERT INTO user(Username, Email, Password, Contact, Profile_pic) VALUES(%s, %s, %s, %s, %s)", (Username, Email, Password, Contact, Profile_pic))
+            mysql.connection.commit()
+            cur.close()
+            flash('Account created successfully!', 'success')
+            return redirect(url_for('stlogin'))
+        else:
+            session['User_id'] = current_user[0]
+            session['Username'] = current_user['Username']
+            session['Email'] =  current_user[2]
+            session['Password'] =  current_user[3]
+            session['Contact'] = current_user[4]
+            session['Profile_pic'] = current_user[5]
+            flash('Logged in as %s' % session['Email'])
+            flash('This email is already registered!')
+            return redirect(url_for('sthome'))
+
+    return render_template('stsignup.html', title='Sign Up')
+
+
+@app.route('/sthome', methods=['GET', 'POST'])
+def sthome():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * from examinside.question")
+    data = cur.fetchall()
+    return render_template('sthome.html', data= data, title='Exam')
+
 
 @app.route('/logout')
 def logout():
@@ -167,7 +236,7 @@ def logout():
     session.pop('Email', None)
     session.pop('Contact', None)
     session.pop('Profile_pic', None)
-    return redirect(url_for('tclogin'))
+    return redirect(url_for('home'))
 
 
 
