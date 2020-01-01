@@ -142,15 +142,6 @@ def teacherques():
     return render_template('teacherques.html', title='Questions')
 
 
-
-@app.route('/question', methods=['GET', 'POST'])
-def getteacherques():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM examinside.question")
-    return jsonify(data=cur.fetchall())
-
-
-
 @app.route('/exam', methods=['GET', 'POST'])
 def exam():
     cur = mysql.connection.cursor()

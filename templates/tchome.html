@@ -45,7 +45,7 @@
         <div class="clr"></div>
         <div class="article">
         <form method="POST" action="">
-          <h2><span> Total Questions : </span><input type="text" name="total_qs" placeholder="No. Of Questions">&emsp;<span> Time : </span> <input type="text" name="time" placeholder="hh:mm"></h2> 
+          <h2><span> Total Questions : </span><input type="text" name="total_qs" placeholder="No. Of Questions" required>&emsp;<span> Marks : </span> <input type="text" name="marks" placeholder="" required></h2> 
           <h3><span> Course : </span> <select name="course">
                         <option value="1">MCA</option>
                         <option value="2">MSC</option>
@@ -64,7 +64,8 @@
                         <option value="4">Operating System</option>
                         <option value="5">Digital Logic</option>
                         <option value="6">Data Structure</option>
-                    </select></h3>  
+                    </select></h3>
+                    <h3><span> Time : </span><input type="text" name="time" placeholder="hh:mm" required>&emsp;<span></h3>
         </div>
         <div class="clr"></div>
         <div class="article">
@@ -82,7 +83,7 @@
       </div>
       <div class="sidebar">
         <div class="gadget">
-          <h3><img src="{{ session['Profile_pic'] }}" width="140" height="140" alt="" /></a></h3>
+          <h3><img src="{{ url_for('static', filename='images/person1.png') }}" width="140" height="140" alt="" /></a></h3>
           <h2 class="star">{{ session['Username'] }}<span></span> </h2>
           <div class="clr"></div>
           <ul class="sb_menu">
