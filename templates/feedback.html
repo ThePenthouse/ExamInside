@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feedback.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/section.css') }}"/>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="header_resize">
+        <div class="menu_nav">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+            <li class="active"><a href="{{ url_for('feedback') }}">Feedback</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo">
+           <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+         <section class="content1">
+        <div class="phone-email">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Enter your name">
+				</div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter phone number">
+                                </div> 
+                       
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter email">
+                                </div>
+
+                                <div class="form-group">
+                                  <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+                                </div>
+                                <button class="btn" type="submit">Send Message</button>
+        </div>
+ </section>
+   
+      
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image Gallery</span></h2>
+        <a href="#"><img src="{{ url_for('static', filename='images/pix1.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{{ url_for('static', filename='images/pix2.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{{ url_for('static', filename='images/pix3.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{{ url_for('static', filename='images/pix4.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{{ url_for('static', filename='images/pix5.jpg') }}" width="58" height="58" alt="" /></a> 
+        <a href="#"><img src="{{ url_for('static', filename='images/pix6.jpg') }}" width="58" height="58" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2><span>Dept. Of CSE</span></h2>
+        <p>MCA (Master Of Computer Application)<br />
+        MSC in CSE (Master Of Science in Computer Science & Engineering)<br />
+        MTECH in CSE (Master of Technology in Computer Science & Engineering)</p>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span></h2>
+        <p>ExamInside.com</p>
+        <p>033 2580 9615</p>
+        <p>Address: Dept. of CSE, UNIVERSITY OF KALYANI</br>
+         Kalyani, Nadia-741235</p></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

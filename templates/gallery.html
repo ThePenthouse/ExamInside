@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="header_resize">
+        <div class="menu_nav">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li class="active"><a href="{{ url_for('gallery') }}">Gallery</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo">
+           <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>  
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a href="#"><img src="{{ url_for('static', filename='images/pix1.jpg') }}" width="210" height="200" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2><span>EVENT GALLERY</span></h2>
+        <p>Department of Computer Science & Engineering<br />
+        University Of Kalyani<br />
+        Kalyani, Nadia</p>
+      </div>
+      <div class="col c3">
+        <a href="#"><img src="{{ url_for('static', filename='images/pic1.jpg') }}" width="260" height="200" alt="" /></a>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+
+ <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+      <h2><span>TEACHER'S DAY</span></h2>
+        <p>Celebration of Teacher's Day<br />
+        Department of Computer Science & Engineering</p>
+      </div>
+      <div class="col c2">
+         <a href="#"><img src="{{ url_for('static', filename='images/pix6.jpg') }}" width="250" height="200" alt="" /></a> 
+      </div>
+      <div class="col c3">
+        <a href="#"><img src="{{ url_for('static', filename='images/pix4.jpg') }}" width="250" height="200" alt="" /></a> 
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+<div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a href="#"><img src="{{ url_for('static', filename='images/pic3.jpg') }}" width="260" height="200" alt="" /></a> 
+      </div>
+      <div class="col c2">
+      <h2><span>VOYAGE</span></h2>
+        <p>This event is held on Department of Computer Science & Engineering<br />
+        The event is basically organized for Freshers and Reunion of the students.<br />
+        Departmental Yearly Magazine is published in this event.</p>
+      </div> 
+      <div class="col c3">
+         <a href="#"><img src="{{ url_for('static', filename='images/pic2.jpg') }}" width="260" height="200" alt="" /></a> 
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+<div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a href="#"><img src="{{ url_for('static', filename='images/pix7.jpg') }}" width="260" height="200" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <a href="#"><img src="{{ url_for('static', filename='images/pix8.jpg') }}" width="260" height="200" alt="" /></a> 
+      </div>
+      <div class="col c3">
+        <h2><span>ACADEMIC FEST</span></h2>
+        <p>Started in 2019 to University of Kalyani<br />
+        Department of Computer Science & Engineering participated in the Academic fest</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

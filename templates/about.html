@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    {% if title %}
+	    <title>ExamInside - {{ title }}</title>
+    {% else %}
+        <title>ExamInside</title>
+    {% endif %}
+	</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="header_resize">
+        <div class="menu_nav">
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="active"><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+        <div class="logo">
+           <img src="{{ url_for('static', filename='images/logo1.jpg') }}" width="220px" height="100px"/>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>  
+  </div>
+  <div class="fbg">
+  </br>
+        <h2><center><span>ABOUT US</span></center></h2></br>
+      <div class="clr"></div>
+  </div>
+   <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a><img src="{{ url_for('static', filename='images/22.jpeg') }}" width="150" height="160" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2>Prasad Bandyopadhyay</h2>
+       <h3>Roll No. : 90/MCA/170012</br></br>
+        Registration No. : 100352 of 2017 - 2018</h3>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a><img src="{{ url_for('static', filename='images/33.jpeg') }}" width="150" height="150" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2>Beauty Chakraborty</h2>
+        <h3>Roll No. : 90/MCA/170005</br></br>
+        Registration No. : 100353 of 2017 - 2018</h3>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="fbg_resize">
+      <div class="col c1">
+        <a><img src="{{ url_for('static', filename='images/11.jpg') }}" width="150" height="150" alt="" /></a> 
+      </div>
+      <div class="col c2">
+        <h2>Lovely Chakraborty</h2>
+        <h3>Roll No. : 90/MCA/170009</br></br>
+        Registration No. : 100354 of 2017 - 2018</h3>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+      <div class="clr"></div>
+  </div>
+</div>
+
+</body>
+</html>

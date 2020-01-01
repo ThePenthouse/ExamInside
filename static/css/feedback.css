@@ -1,0 +1,70 @@
+/* ---Contact Portion --- */
+
+
+.phone-email{
+    width: 65%;
+    display: inline-block;
+    position: relative;
+    min-height: 0.5px;
+    padding-top: 1rem;
+    padding-left: 45px;
+    padding-right: 25px;
+    margin-left:30%;
+}
+
+.name-msg{
+    width: 50%;
+    position: relative;
+    min-height: 1px;
+    margin-left:10%;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+.btn{
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    float: left; 
+    margin-left:0;
+}
+  
+ .form-group {
+    width: 50%;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 60%;
+    vertical-align: middle;
+  }
+
+
+  .form-control {
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #3fccdf;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  }
+  .form-control:focus {
+    border-color: #010e1a;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  }
+ 
+  textarea.form-control {
+    height: auto;
+  }
+
+/* ---Contact End --- */
